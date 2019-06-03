@@ -6,7 +6,7 @@ A continuación de explica cómo ejecutar la prueba de código y cuáles son los
 
 Para ejecutar la prueba se ha de utilizar el siguiente comando desde la raíz del proyecto:
 
-`composer install`
+`composer install`  
 `php bin/console server:run 127.0.0.1:1234`
 
 A partir de ese momento se puede ejecutar desde esa dirección.
