@@ -8,7 +8,12 @@ use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ApiResource(attributes={"normalization_context"={"groups"={"get"}}})
+ * @ApiResource(
+ *     attributes={
+ *       "normalization_context"={"groups"={"get"}},
+ *       "access_control"="is_granted('ROLE_ADMIN')"
+ *     }
+ * )
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
 class User implements UserInterface
@@ -18,7 +23,7 @@ class User implements UserInterface
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private $uid;
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
@@ -38,9 +43,12 @@ class User implements UserInterface
      */
     private $password;
 
-    public function getId(): ?int
+    /**
+     * @return int|null
+     */
+    public function getUid(): ?int
     {
-        return $this->id;
+        return $this->uid;
     }
 
     /**
@@ -53,6 +61,10 @@ class User implements UserInterface
         return (string) $this->username;
     }
 
+    /**
+     * @param string $username
+     * @return User
+     */
     public function setUsername(string $username): self
     {
         $this->username = $username;
@@ -72,6 +84,10 @@ class User implements UserInterface
         return array_unique($roles);
     }
 
+    /**
+     * @param array $roles
+     * @return User
+     */
     public function setRoles(array $roles): self
     {
         $this->roles = $roles;
@@ -87,6 +103,10 @@ class User implements UserInterface
         return (string) $this->password;
     }
 
+    /**
+     * @param string $password
+     * @return User
+     */
     public function setPassword(string $password): self
     {
         $this->password = $password;

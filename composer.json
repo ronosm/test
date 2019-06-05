@@ -18,7 +18,10 @@
     },
     "require-dev": {
         "api-platform/schema-generator": "^2.1",
+        "phpmd/phpmd": "^2.6",
+        "squizlabs/php_codesniffer": "*",
         "symfony/maker-bundle": "^1.11",
+        "symfony/phpunit-bridge": "4.2.*",
         "symfony/profiler-pack": "^1.0",
         "symfony/web-server-bundle": "4.2.*"
     },

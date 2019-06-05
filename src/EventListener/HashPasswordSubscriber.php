@@ -67,9 +67,9 @@ class HashPasswordSubscriber implements EventSubscriber
         }
         $this->encodePassword($entity);
         // necessary to force the update to see the change
-        $em = $args->getEntityManager();
-        $meta = $em->getClassMetadata(get_class($entity));
-        $em->getUnitOfWork()->recomputeSingleEntityChangeSet($meta, $entity);
+        $entityManager = $args->getEntityManager();
+        $meta = $entityManager->getClassMetadata(get_class($entity));
+        $entityManager->getUnitOfWork()->recomputeSingleEntityChangeSet($meta, $entity);
     }
 
     /**

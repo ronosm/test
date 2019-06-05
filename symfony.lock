@@ -158,6 +158,9 @@
     "ocramius/proxy-manager": {
         "version": "2.2.2"
     },
+    "pdepend/pdepend": {
+        "version": "2.5.2"
+    },
     "php-cs-fixer/diff": {
         "version": "v1.3.0"
     },
@@ -169,6 +172,9 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
+    },
+    "phpmd/phpmd": {
+        "version": "2.6.0"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -190,6 +196,18 @@
     },
     "ralouphie/getallheaders": {
         "version": "2.0.5"
+    },
+    "squizlabs/php_codesniffer": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "0dc9cceda799fd3a08b96987e176a261028a3709"
+        },
+        "files": [
+            "./phpcs.xml.dist"
+        ]
     },
     "symfony/asset": {
         "version": "v4.2.8"
@@ -306,6 +324,22 @@
     },
     "symfony/options-resolver": {
         "version": "v4.2.8"
+    },
+    "symfony/phpunit-bridge": {
+        "version": "4.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "4.1",
+            "ref": "9dbf01cf67d791746ec772fe274c4d91cbf3c9ec"
+        },
+        "files": [
+            "./.env.test",
+            "./bin/phpunit",
+            "./config/bootstrap.php",
+            "./phpunit.xml.dist",
+            "./tests/.gitignore"
+        ]
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.11.0"

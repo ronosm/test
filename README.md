@@ -30,6 +30,11 @@ Hay cuatro usuarios generados:
 | User2    | User2    | ROLE_PAGE_2 |  
 | User3    | User3    | ROLE_PAGE_3 |  
 | Admin    | Admin    | ROLE_ADMIN  |  
+| admin    | adminpassword | ROLE_ADMIN  | 
+ 
+ Para generarlos con Migrations:
+ 
+ `php bin/console doctrine:migrations:migrate`
 
 ## Herramientas empleadas
 
@@ -38,3 +43,13 @@ Se ha utilizado:
 - API Platform
 - Symfony 4.2
 - PHP 7.3
+
+
+## Code Sniffer y Mess Detection
+
+Se han pasado ambas inspecciones, se han dejado sin corregir las inherentes al framework y
+las detectadas en las migrations.
+
+## Tests
+
+Se han realizado los tests de la entidad User.
